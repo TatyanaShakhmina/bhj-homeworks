@@ -15,8 +15,16 @@ for (let holeindex = 1; holeindex<10; holeindex++) {
         }
         if (deadClicks === 10) {
             alert("Победа!");
+            deadClicks = 0;
+            lostClicks = 0;
+            dead.textContent = deadClicks;
+            lost.textContent = lostClicks;
         } else if (lostClicks === 5) {
             alert("Вы проиграли!");
+            deadClicks = 0;
+            lostClicks = 0;
+            dead.textContent = deadClicks;
+            lost.textContent = lostClicks;
         }
     }
 }
