@@ -31,7 +31,14 @@ products.forEach(product => {
             const countCart = existingCartProduct.querySelector('.cart__product-count');
             countCart.textContent = parseInt(countCart.textContent) + quantity;
         } else {
-            const cartProduct = document.createElement('div');
+            cartProducts.insertAdjacentHTML('afterbegin', `
+              <div class="cart__product" data-id= "${productId}">
+                <img class="cart__product-image" src="${productImage}">
+                <div class="cart__product-count">${quantity}</div>
+              </div>
+            `);
+
+            /*const cartProduct = document.createElement('div');
             cartProduct.classList.add('cart__product');
             cartProduct.setAttribute('data-id', productId);
 
@@ -46,7 +53,7 @@ products.forEach(product => {
             cartProduct.appendChild(cartProductImage);
             cartProduct.appendChild(cartProductCount);
 
-            cartProducts.appendChild(cartProduct);
+            cartProducts.appendChild(cartProduct);*/
         }
     });
 });

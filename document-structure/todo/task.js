@@ -4,19 +4,17 @@ const taskInput = document.getElementById('task__input');
 
 function addTask(taskText) {
     if (taskText) {
-        let task = document.createElement("div");
-        task.classList.add('task');
-        tasksList.appendChild(task);
+        tasksList.insertAdjacentHTML('afterbegin', `
+            <div class="task">
+                <div class="task__title">
+                    ${taskText}
+                </div>
+                <a href="#" class="task__remove">&times;</a>
+            </div>
+        `);
 
-        let taskTitle = document.createElement("div");
-        taskTitle.classList.add('task__title');
-        task.appendChild(taskTitle);
-        taskTitle.textContent = taskText;
-
-        let taskRemove = document.createElement("a");
-        taskRemove.classList.add('task__remove');
-        task.appendChild(taskRemove);
-        taskRemove.textContent = '×';
+        const taskRemove = tasksList.querySelector('.task__remove');
+        const task = tasksList.querySelector('.task');
 
         taskRemove.addEventListener('click', function (event) {
             event.preventDefault();
@@ -27,14 +25,6 @@ function addTask(taskText) {
 
 buttonTasksAdd.addEventListener('click', function (event) {
     event.preventDefault();
-    addTask(taskInput.value);
+    addTask(taskInput.value.trim());
     taskInput.value = '';
-});
-
-taskInput.addEventListener('keydown', function (event) {
-    if (event.key === 'Enter') {
-        event.preventDefault();
-        addTask(taskInput.value);
-        taskInput.value = '';
-    }
 });
