@@ -19,7 +19,7 @@ send.addEventListener('click', (e) => {
     });
 
     xhr.onload = function() {
-        if (xhr.status === 200) {
+        if (xhr.readyState === xhr.DONE) {
             alert('Файл загружен!');
         } else {
             alert('Ошибка при загрузке файла!');

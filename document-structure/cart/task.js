@@ -37,23 +37,6 @@ products.forEach(product => {
                 <div class="cart__product-count">${quantity}</div>
               </div>
             `);
-
-            /*const cartProduct = document.createElement('div');
-            cartProduct.classList.add('cart__product');
-            cartProduct.setAttribute('data-id', productId);
-
-            const cartProductImage = document.createElement('img');
-            cartProductImage.classList.add('cart__product-image');
-            cartProductImage.src = productImage;
-
-            const cartProductCount = document.createElement('div');
-            cartProductCount.classList.add('cart__product-count');
-            cartProductCount.textContent = quantity;
-
-            cartProduct.appendChild(cartProductImage);
-            cartProduct.appendChild(cartProductCount);
-
-            cartProducts.appendChild(cartProduct);*/
         }
     });
 });
