@@ -12,7 +12,7 @@ modalClose.addEventListener("click", close);
 
 function close() {
     subscribeModal.classList.remove('modal_active');
-    document.cookie = 'ifModalClose=true; path=/; expires=Mon, 26 Jan 2026 03:14:07 GMT';
+    document.cookie = 'ifModalClose=true; path=/; max-age=3600';
 }
 
 function getCookie(name) {
